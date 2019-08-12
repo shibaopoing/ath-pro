@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spping.ath.sms.dao.mapper.SmsInfoMapper">
+  <resultMap id="BaseResultMap" type="com.spping.ath.sms.dao.model.SmsInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="act_date" jdbcType="VARCHAR" property="actDate" />
+    <result column="phone_no" jdbcType="VARCHAR" property="phoneNo" />
+    <result column="sms_channel" jdbcType="VARCHAR" property="smsChannel" />
+    <result column="sms_source" jdbcType="VARCHAR" property="smsSource" />
+    <result column="sms_use_type" jdbcType="VARCHAR" property="smsUseType" />
+    <result column="sms_code" jdbcType="VARCHAR" property="smsCode" />
+    <result column="sms_status" jdbcType="VARCHAR" property="smsStatus" />
+    <result column="sms_return_code" jdbcType="VARCHAR" property="smsReturnCode" />
+    <result column="sms_return_msg" jdbcType="VARCHAR" property="smsReturnMsg" />
+    <result column="sms_remark" jdbcType="VARCHAR" property="smsRemark" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="modify_time" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, act_date, phone_no, sms_channel, sms_source, sms_use_type, sms_code, sms_status, 
+    sms_return_code, sms_return_msg, sms_remark, create_time, modify_time
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from sms_info
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <select id="selectLastByParams" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from sms_info
+    where phone_no = #{phoneNumber,jdbcType=VARCHAR} and sms_use_type = #{useType,jdbcType=VARCHAR} and sms_code = 'Y'
+    order by id desc limit 1
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from sms_info
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.spping.ath.sms.dao.model.SmsInfo">
+    insert into sms_info (id, act_date, phone_no, 
+      sms_channel, sms_source, sms_use_type, 
+      sms_code, sms_status, sms_return_code, 
+      sms_return_msg, sms_remark, create_time, 
+      modify_time)
+    values (#{id,jdbcType=BIGINT}, #{actDate,jdbcType=VARCHAR}, #{phoneNo,jdbcType=VARCHAR}, 
+      #{smsChannel,jdbcType=VARCHAR}, #{smsSource,jdbcType=VARCHAR}, #{smsUseType,jdbcType=VARCHAR}, 
+      #{smsCode,jdbcType=VARCHAR}, #{smsStatus,jdbcType=VARCHAR}, #{smsReturnCode,jdbcType=VARCHAR}, 
+      #{smsReturnMsg,jdbcType=VARCHAR}, #{smsRemark,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.spping.ath.sms.dao.model.SmsInfo">
+    insert into sms_info
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="actDate != null">
+        act_date,
+      </if>
+      <if test="phoneNo != null">
+        phone_no,
+      </if>
+      <if test="smsChannel != null">
+        sms_channel,
+      </if>
+      <if test="smsSource != null">
+        sms_source,
+      </if>
+      <if test="smsUseType != null">
+        sms_use_type,
+      </if>
+      <if test="smsCode != null">
+        sms_code,
+      </if>
+      <if test="smsStatus != null">
+        sms_status,
+      </if>
+      <if test="smsReturnCode != null">
+        sms_return_code,
+      </if>
+      <if test="smsReturnMsg != null">
+        sms_return_msg,
+      </if>
+      <if test="smsRemark != null">
+        sms_remark,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="modifyTime != null">
+        modify_time,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="actDate != null">
+        #{actDate,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null">
+        #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="smsChannel != null">
+        #{smsChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="smsSource != null">
+        #{smsSource,jdbcType=VARCHAR},
+      </if>
+      <if test="smsUseType != null">
+        #{smsUseType,jdbcType=VARCHAR},
+      </if>
+      <if test="smsCode != null">
+        #{smsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="smsStatus != null">
+        #{smsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="smsReturnCode != null">
+        #{smsReturnCode,jdbcType=VARCHAR},
+      </if>
+      <if test="smsReturnMsg != null">
+        #{smsReturnMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="smsRemark != null">
+        #{smsRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+
+  <update id="updateByParams" >
+    update sms_info set sms_status='N'
+    where phone_no = #{phoneNumber,jdbcType=VARCHAR} and sms_Code = #{smsCode,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.spping.ath.sms.dao.model.SmsInfo">
+    update sms_info
+    <set>
+      <if test="actDate != null">
+        act_date = #{actDate,jdbcType=VARCHAR},
+      </if>
+      <if test="phoneNo != null">
+        phone_no = #{phoneNo,jdbcType=VARCHAR},
+      </if>
+      <if test="smsChannel != null">
+        sms_channel = #{smsChannel,jdbcType=VARCHAR},
+      </if>
+      <if test="smsSource != null">
+        sms_source = #{smsSource,jdbcType=VARCHAR},
+      </if>
+      <if test="smsUseType != null">
+        sms_use_type = #{smsUseType,jdbcType=VARCHAR},
+      </if>
+      <if test="smsCode != null">
+        sms_code = #{smsCode,jdbcType=VARCHAR},
+      </if>
+      <if test="smsStatus != null">
+        sms_status = #{smsStatus,jdbcType=VARCHAR},
+      </if>
+      <if test="smsReturnCode != null">
+        sms_return_code = #{smsReturnCode,jdbcType=VARCHAR},
+      </if>
+      <if test="smsReturnMsg != null">
+        sms_return_msg = #{smsReturnMsg,jdbcType=VARCHAR},
+      </if>
+      <if test="smsRemark != null">
+        sms_remark = #{smsRemark,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        modify_time = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.spping.ath.sms.dao.model.SmsInfo">
+    update sms_info
+    set act_date = #{actDate,jdbcType=VARCHAR},
+      phone_no = #{phoneNo,jdbcType=VARCHAR},
+      sms_channel = #{smsChannel,jdbcType=VARCHAR},
+      sms_source = #{smsSource,jdbcType=VARCHAR},
+      sms_use_type = #{smsUseType,jdbcType=VARCHAR},
+      sms_code = #{smsCode,jdbcType=VARCHAR},
+      sms_status = #{smsStatus,jdbcType=VARCHAR},
+      sms_return_code = #{smsReturnCode,jdbcType=VARCHAR},
+      sms_return_msg = #{smsReturnMsg,jdbcType=VARCHAR},
+      sms_remark = #{smsRemark,jdbcType=VARCHAR},
+      create_time = #{createTime,jdbcType=TIMESTAMP},
+      modify_time = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

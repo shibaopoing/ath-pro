@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/ath-common/ath-common.iml" filepath="$PROJECT_DIR$/ath-common/ath-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-customer/ath-customer.iml" filepath="$PROJECT_DIR$/ath-customer/ath-customer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-customer/ath-customer-api/ath-customer-api.iml" filepath="$PROJECT_DIR$/ath-customer/ath-customer-api/ath-customer-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-customer/ath-customer-provider/ath-customer-provider.iml" filepath="$PROJECT_DIR$/ath-customer/ath-customer-provider/ath-customer-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-eureka/ath-eureka.iml" filepath="$PROJECT_DIR$/ath-eureka/ath-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-file/ath-file.iml" filepath="$PROJECT_DIR$/ath-file/ath-file.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-file/ath-file-api/ath-file-api.iml" filepath="$PROJECT_DIR$/ath-file/ath-file-api/ath-file-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-file/ath-file-provider/ath-file-provider.iml" filepath="$PROJECT_DIR$/ath-file/ath-file-provider/ath-file-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-movie/ath-movie.iml" filepath="$PROJECT_DIR$/ath-movie/ath-movie.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-movie/ath-movie-api/ath-movie-api.iml" filepath="$PROJECT_DIR$/ath-movie/ath-movie-api/ath-movie-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-movie/ath-movie-provider/ath-movie-provider.iml" filepath="$PROJECT_DIR$/ath-movie/ath-movie-provider/ath-movie-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-pro.iml" filepath="$PROJECT_DIR$/ath-pro.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-sms/ath-sms.iml" filepath="$PROJECT_DIR$/ath-sms/ath-sms.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-sms/ath-sms-api/ath-sms-api.iml" filepath="$PROJECT_DIR$/ath-sms/ath-sms-api/ath-sms-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-sms/ath-sms-provider/ath-sms-provider.iml" filepath="$PROJECT_DIR$/ath-sms/ath-sms-provider/ath-sms-provider.iml" />
+    </modules>
+  </component>
+</project>

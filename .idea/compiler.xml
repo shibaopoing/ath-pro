@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="ath-sms-api" />
+        <module name="ath-customer-provider" />
+        <module name="ath-sms-provider" />
+        <module name="ath-file-api" />
+        <module name="ath-file-provider" />
+        <module name="ath-common" />
+        <module name="ath-customer-api" />
+        <module name="ath-eureka" />
+        <module name="ath-movie-provider" />
+        <module name="ath-movie-api" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ath-common" target="1.8" />
+      <module name="ath-customer" target="1.8" />
+      <module name="ath-customer-api" target="1.8" />
+      <module name="ath-customer-provider" target="1.8" />
+      <module name="ath-eureka" target="1.8" />
+      <module name="ath-file" target="1.8" />
+      <module name="ath-file-api" target="1.8" />
+      <module name="ath-file-provider" target="1.8" />
+      <module name="ath-movie" target="1.8" />
+      <module name="ath-movie-api" target="1.8" />
+      <module name="ath-movie-provider" target="1.8" />
+      <module name="ath-pro" target="1.8" />
+      <module name="ath-sms" target="1.8" />
+      <module name="ath-sms-api" target="1.8" />
+      <module name="ath-sms-provider" target="1.8" />
+      <module name="athmovieprovider" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="ath-common" options="-parameters" />
+      <module name="ath-customer" options="-parameters" />
+      <module name="ath-customer-api" options="-parameters" />
+      <module name="ath-customer-provider" options="-parameters" />
+      <module name="ath-eureka" options="-parameters" />
+      <module name="ath-file" options="-parameters" />
+      <module name="ath-file-api" options="-parameters" />
+      <module name="ath-file-provider" options="-parameters" />
+      <module name="ath-movie" options="-parameters" />
+      <module name="ath-movie-api" options="-parameters" />
+      <module name="ath-movie-provider" options="-parameters" />
+      <module name="ath-sms" options="-parameters" />
+      <module name="ath-sms-api" options="-parameters" />
+      <module name="ath-sms-provider" options="-parameters" />
+      <module name="athmovieprovider" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-common" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-customer" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-customer/ath-customer-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-customer/ath-customer-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-eureka" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-file" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-file/ath-file-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-file/ath-file-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-movie" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-movie/ath-movie-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-movie/ath-movie-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-movie/ath-movie-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-movie/ath-movie-provider" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-sms" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-sms/ath-sms-api" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ath-sms/ath-sms-provider" charset="UTF-8" />
+  </component>
+</project>

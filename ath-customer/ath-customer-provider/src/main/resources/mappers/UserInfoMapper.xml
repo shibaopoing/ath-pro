@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spping.ath.customer.dao.mapper.UserInfoMapper">
+  <resultMap id="BaseResultMap" type="com.spping.ath.customer.dao.model.UserInfo">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_PWD" jdbcType="VARCHAR" property="userPwd" />
+    <result column="FACE_IMAGE" jdbcType="VARCHAR" property="faceImage" />
+    <result column="FACE_IMAGE_BIG" jdbcType="VARCHAR" property="faceImageBig" />
+    <result column="QR_CODE" jdbcType="VARCHAR" property="qrCode" />
+    <result column="ROLE_CODE" jdbcType="BIGINT" property="roleCode" />
+    <result column="USER_PHONE" jdbcType="CHAR" property="userPhone" />
+    <result column="CHAT_ID" jdbcType="BIGINT" property="chatId" />
+    <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="MODIFY_TIME" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, USER_CODE, USER_NAME, USER_PWD, FACE_IMAGE, FACE_IMAGE_BIG, QR_CODE, ROLE_CODE,
+    USER_PHONE, CHAT_ID, USER_EMAIL, CREATE_TIME, MODIFY_TIME
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from USER_INFO
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <!--账号查询 -->
+  <select id="selectByUserCode" resultType="com.spping.ath.customer.dao.model.UserInfo">
+    select
+    <include refid="Base_Column_List" />
+    from USER_INFO
+    where USER_CODE = #{userCode,jdbcType=VARCHAR}
+  </select>
+  <!--手机查询 -->
+  <select id="selectByPhone" resultType="com.spping.ath.customer.dao.model.UserInfo">
+    select
+    <include refid="Base_Column_List" />
+    from USER_INFO
+    where USER_PHONE = #{userPhone,jdbcType=CHAR}
+  </select>
+  <!--账号登陆 -->
+  <select id="loginByUserCode" resultType="com.spping.ath.customer.dao.model.UserInfo">
+    select
+    <include refid="Base_Column_List" />
+    from USER_INFO
+    where USER_CODE = #{userCode,jdbcType=VARCHAR} AND USER_PWD = #{userPwd,jdbcType=VARCHAR}
+  </select>
+  <!--手机登录 -->
+  <select id="loginByPhone" resultType="com.spping.ath.customer.dao.model.UserInfo">
+    select
+    <include refid="Base_Column_List" />
+    from USER_INFO
+    where USER_PHONE = #{userPhone,jdbcType=VARCHAR} AND USER_PWD = #{userPwd,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from USER_INFO
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.spping.ath.customer.dao.model.UserInfo">
+    insert into USER_INFO (id, USER_CODE, USER_NAME,
+      USER_PWD, FACE_IMAGE, FACE_IMAGE_BIG,
+      QR_CODE, ROLE_CODE, USER_PHONE,
+      CHAT_ID, USER_EMAIL, CREATE_TIME,
+      MODIFY_TIME)
+    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR},
+      #{userPwd,jdbcType=VARCHAR}, #{faceImage,jdbcType=VARCHAR}, #{faceImageBig,jdbcType=VARCHAR},
+      #{qrCode,jdbcType=VARCHAR}, #{roleCode,jdbcType=BIGINT}, #{userPhone,jdbcType=CHAR},
+      #{chatId,jdbcType=BIGINT}, #{userEmail,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.spping.ath.customer.dao.model.UserInfo">
+    insert into USER_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userCode != null">
+        USER_CODE,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userPwd != null">
+        USER_PWD,
+      </if>
+      <if test="faceImage != null">
+        FACE_IMAGE,
+      </if>
+      <if test="faceImageBig != null">
+        FACE_IMAGE_BIG,
+      </if>
+      <if test="qrCode != null">
+        QR_CODE,
+      </if>
+      <if test="roleCode != null">
+        ROLE_CODE,
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE,
+      </if>
+      <if test="chatId != null">
+        CHAT_ID,
+      </if>
+      <if test="userEmail != null">
+        USER_EMAIL,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userCode != null">
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImage != null">
+        #{faceImage,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImageBig != null">
+        #{faceImageBig,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCode != null">
+        #{roleCode,jdbcType=BIGINT},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=CHAR},
+      </if>
+      <if test="chatId != null">
+        #{chatId,jdbcType=BIGINT},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.spping.ath.customer.dao.model.UserInfo">
+    update USER_INFO
+    <set>
+      <if test="userCode != null">
+        USER_CODE = #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        USER_NAME = #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        USER_PWD = #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImage != null">
+        FACE_IMAGE = #{faceImage,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImageBig != null">
+        FACE_IMAGE_BIG = #{faceImageBig,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        QR_CODE = #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCode != null">
+        ROLE_CODE = #{roleCode,jdbcType=BIGINT},
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE = #{userPhone,jdbcType=CHAR},
+      </if>
+      <if test="chatId != null">
+        CHAT_ID = #{chatId,jdbcType=BIGINT},
+      </if>
+      <if test="userEmail != null">
+        USER_EMAIL = #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.spping.ath.customer.dao.model.UserInfo">
+    update USER_INFO
+    set USER_CODE = #{userCode,jdbcType=VARCHAR},
+      USER_NAME = #{userName,jdbcType=VARCHAR},
+      USER_PWD = #{userPwd,jdbcType=VARCHAR},
+      FACE_IMAGE = #{faceImage,jdbcType=VARCHAR},
+      FACE_IMAGE_BIG = #{faceImageBig,jdbcType=VARCHAR},
+      QR_CODE = #{qrCode,jdbcType=VARCHAR},
+      ROLE_CODE = #{roleCode,jdbcType=BIGINT},
+      USER_PHONE = #{userPhone,jdbcType=CHAR},
+      CHAT_ID = #{chatId,jdbcType=BIGINT},
+      USER_EMAIL = #{userEmail,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      MODIFY_TIME = #{modifyTime,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+</mapper>

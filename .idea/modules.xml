@@ -13,6 +13,9 @@
       <module fileurl="file://$PROJECT_DIR$/ath-movie/ath-movie.iml" filepath="$PROJECT_DIR$/ath-movie/ath-movie.iml" />
       <module fileurl="file://$PROJECT_DIR$/ath-movie/ath-movie-api/ath-movie-api.iml" filepath="$PROJECT_DIR$/ath-movie/ath-movie-api/ath-movie-api.iml" />
       <module fileurl="file://$PROJECT_DIR$/ath-movie/ath-movie-provider/ath-movie-provider.iml" filepath="$PROJECT_DIR$/ath-movie/ath-movie-provider/ath-movie-provider.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-oprate/ath-oprate.iml" filepath="$PROJECT_DIR$/ath-oprate/ath-oprate.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-oprate/ath-oprate-api/ath-oprate-api.iml" filepath="$PROJECT_DIR$/ath-oprate/ath-oprate-api/ath-oprate-api.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ath-oprate/ath-oprate-provider/ath-oprate-provider.iml" filepath="$PROJECT_DIR$/ath-oprate/ath-oprate-provider/ath-oprate-provider.iml" />
       <module fileurl="file://$PROJECT_DIR$/ath-pro.iml" filepath="$PROJECT_DIR$/ath-pro.iml" />
       <module fileurl="file://$PROJECT_DIR$/ath-sms/ath-sms.iml" filepath="$PROJECT_DIR$/ath-sms/ath-sms.iml" />
       <module fileurl="file://$PROJECT_DIR$/ath-sms/ath-sms-api/ath-sms-api.iml" filepath="$PROJECT_DIR$/ath-sms/ath-sms-api/ath-sms-api.iml" />

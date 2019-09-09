@@ -2,6 +2,230 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spping.ath.dao.mapper.UserInfoMapper">
   <resultMap id="BaseResultMap" type="com.spping.ath.dao.model.UserInfo">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_PWD" jdbcType="VARCHAR" property="userPwd" />
+    <result column="FACE_IMAGE" jdbcType="VARCHAR" property="faceImage" />
+    <result column="FACE_IMAGE_BIG" jdbcType="VARCHAR" property="faceImageBig" />
+    <result column="QR_CODE" jdbcType="VARCHAR" property="qrCode" />
+    <result column="ROLE_CODE" jdbcType="BIGINT" property="roleCode" />
+    <result column="USER_PHONE" jdbcType="CHAR" property="userPhone" />
+    <result column="CHAT_ID" jdbcType="BIGINT" property="chatId" />
+    <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="MODIFY_TIME" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.spping.ath.dao.model.UserInfo">
+    insert into USER_INFO (id, USER_CODE, USER_NAME, 
+      USER_PWD, FACE_IMAGE, FACE_IMAGE_BIG, 
+      QR_CODE, ROLE_CODE, USER_PHONE, 
+      CHAT_ID, USER_EMAIL, CREATE_TIME, 
+      MODIFY_TIME)
+    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userPwd,jdbcType=VARCHAR}, #{faceImage,jdbcType=VARCHAR}, #{faceImageBig,jdbcType=VARCHAR}, 
+      #{qrCode,jdbcType=VARCHAR}, #{roleCode,jdbcType=BIGINT}, #{userPhone,jdbcType=CHAR}, 
+      #{chatId,jdbcType=BIGINT}, #{userEmail,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.spping.ath.dao.model.UserInfo">
+    insert into USER_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userCode != null">
+        USER_CODE,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userPwd != null">
+        USER_PWD,
+      </if>
+      <if test="faceImage != null">
+        FACE_IMAGE,
+      </if>
+      <if test="faceImageBig != null">
+        FACE_IMAGE_BIG,
+      </if>
+      <if test="qrCode != null">
+        QR_CODE,
+      </if>
+      <if test="roleCode != null">
+        ROLE_CODE,
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE,
+      </if>
+      <if test="chatId != null">
+        CHAT_ID,
+      </if>
+      <if test="userEmail != null">
+        USER_EMAIL,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userCode != null">
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImage != null">
+        #{faceImage,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImageBig != null">
+        #{faceImageBig,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCode != null">
+        #{roleCode,jdbcType=BIGINT},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=CHAR},
+      </if>
+      <if test="chatId != null">
+        #{chatId,jdbcType=BIGINT},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.spping.ath.dao.model.UserInfo">
+    <result column="id" jdbcType="BIGINT" property="id" />
+    <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
+    <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />
+    <result column="USER_PWD" jdbcType="VARCHAR" property="userPwd" />
+    <result column="FACE_IMAGE" jdbcType="VARCHAR" property="faceImage" />
+    <result column="FACE_IMAGE_BIG" jdbcType="VARCHAR" property="faceImageBig" />
+    <result column="QR_CODE" jdbcType="VARCHAR" property="qrCode" />
+    <result column="ROLE_CODE" jdbcType="BIGINT" property="roleCode" />
+    <result column="USER_PHONE" jdbcType="CHAR" property="userPhone" />
+    <result column="CHAT_ID" jdbcType="BIGINT" property="chatId" />
+    <result column="USER_EMAIL" jdbcType="VARCHAR" property="userEmail" />
+    <result column="CREATE_TIME" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="MODIFY_TIME" jdbcType="TIMESTAMP" property="modifyTime" />
+  </resultMap>
+  <insert id="insert" parameterType="com.spping.ath.dao.model.UserInfo">
+    insert into USER_INFO (id, USER_CODE, USER_NAME, 
+      USER_PWD, FACE_IMAGE, FACE_IMAGE_BIG, 
+      QR_CODE, ROLE_CODE, USER_PHONE, 
+      CHAT_ID, USER_EMAIL, CREATE_TIME, 
+      MODIFY_TIME)
+    values (#{id,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{userName,jdbcType=VARCHAR}, 
+      #{userPwd,jdbcType=VARCHAR}, #{faceImage,jdbcType=VARCHAR}, #{faceImageBig,jdbcType=VARCHAR}, 
+      #{qrCode,jdbcType=VARCHAR}, #{roleCode,jdbcType=BIGINT}, #{userPhone,jdbcType=CHAR}, 
+      #{chatId,jdbcType=BIGINT}, #{userEmail,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{modifyTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.spping.ath.dao.model.UserInfo">
+    insert into USER_INFO
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="userCode != null">
+        USER_CODE,
+      </if>
+      <if test="userName != null">
+        USER_NAME,
+      </if>
+      <if test="userPwd != null">
+        USER_PWD,
+      </if>
+      <if test="faceImage != null">
+        FACE_IMAGE,
+      </if>
+      <if test="faceImageBig != null">
+        FACE_IMAGE_BIG,
+      </if>
+      <if test="qrCode != null">
+        QR_CODE,
+      </if>
+      <if test="roleCode != null">
+        ROLE_CODE,
+      </if>
+      <if test="userPhone != null">
+        USER_PHONE,
+      </if>
+      <if test="chatId != null">
+        CHAT_ID,
+      </if>
+      <if test="userEmail != null">
+        USER_EMAIL,
+      </if>
+      <if test="createTime != null">
+        CREATE_TIME,
+      </if>
+      <if test="modifyTime != null">
+        MODIFY_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=BIGINT},
+      </if>
+      <if test="userCode != null">
+        #{userCode,jdbcType=VARCHAR},
+      </if>
+      <if test="userName != null">
+        #{userName,jdbcType=VARCHAR},
+      </if>
+      <if test="userPwd != null">
+        #{userPwd,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImage != null">
+        #{faceImage,jdbcType=VARCHAR},
+      </if>
+      <if test="faceImageBig != null">
+        #{faceImageBig,jdbcType=VARCHAR},
+      </if>
+      <if test="qrCode != null">
+        #{qrCode,jdbcType=VARCHAR},
+      </if>
+      <if test="roleCode != null">
+        #{roleCode,jdbcType=BIGINT},
+      </if>
+      <if test="userPhone != null">
+        #{userPhone,jdbcType=CHAR},
+      </if>
+      <if test="chatId != null">
+        #{chatId,jdbcType=BIGINT},
+      </if>
+      <if test="userEmail != null">
+        #{userEmail,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="modifyTime != null">
+        #{modifyTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <resultMap id="BaseResultMap" type="com.spping.ath.dao.model.UserInfo">
     <id column="id" jdbcType="BIGINT" property="id" />
     <result column="USER_CODE" jdbcType="VARCHAR" property="userCode" />
     <result column="USER_NAME" jdbcType="VARCHAR" property="userName" />

@@ -26,7 +26,6 @@
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
         <mysql.version>8.0.16</mysql.version>
         <mybatis.version>2.0.1</mybatis.version>
-        <lombok.version>1.18.8</lombok.version>
         <eureka-client.version>2.1.0.RELEASE</eureka-client.version>
         <eureka-starter.version>1.4.7.RELEASE</eureka-starter.version>
     </properties>
@@ -37,6 +36,7 @@
         <module>ath-customer</module>
         <module>ath-sms</module>
         <module>ath-file</module>
+        <module>ath-oprate</module>
     </modules>
     <dependencies>
         <dependency>
@@ -57,6 +57,10 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -185,6 +189,11 @@
                 <artifactId>ath-file-api</artifactId>
                 <version>1.0-SNAPSHOT</version>
             </dependency>
+            <dependency>
+                <groupId>com.spping</groupId>
+                <artifactId>ath-oprate-api</artifactId>
+                <version>1.0-SNAPSHOT</version>
+            </dependency>
             <!--第三方-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
@@ -212,12 +221,6 @@
                 <groupId>org.mybatis.spring.boot</groupId>
                 <artifactId>mybatis-spring-boot-starter</artifactId>
                 <version>${mybatis.version}</version>
-            </dependency>
-            <!-- 定义 lombok 版本 -->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>${lombok.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.mybatis.generator</groupId>

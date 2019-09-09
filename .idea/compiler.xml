@@ -6,14 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="ath-sms-api" />
         <module name="ath-customer-provider" />
         <module name="ath-sms-provider" />
-        <module name="ath-file-api" />
         <module name="ath-file-provider" />
+        <module name="ath-eureka" />
         <module name="ath-common" />
         <module name="ath-customer-api" />
-        <module name="ath-eureka" />
+        <module name="ath-oprate-api" />
+        <module name="ath-file-api" />
+        <module name="ath-sms-api" />
+        <module name="ath-oprate-provider" />
         <module name="ath-movie-provider" />
         <module name="ath-movie-api" />
       </profile>
@@ -30,6 +32,9 @@
       <module name="ath-movie" target="1.8" />
       <module name="ath-movie-api" target="1.8" />
       <module name="ath-movie-provider" target="1.8" />
+      <module name="ath-oprate" target="1.8" />
+      <module name="ath-oprate-api" target="1.8" />
+      <module name="ath-oprate-provider" target="1.8" />
       <module name="ath-pro" target="1.8" />
       <module name="ath-sms" target="1.8" />
       <module name="ath-sms-api" target="1.8" />
@@ -50,6 +55,9 @@
       <module name="ath-movie" options="-parameters" />
       <module name="ath-movie-api" options="-parameters" />
       <module name="ath-movie-provider" options="-parameters" />
+      <module name="ath-oprate" options="-parameters" />
+      <module name="ath-oprate-api" options="-parameters" />
+      <module name="ath-oprate-provider" options="-parameters" />
       <module name="ath-sms" options="-parameters" />
       <module name="ath-sms-api" options="-parameters" />
       <module name="ath-sms-provider" options="-parameters" />

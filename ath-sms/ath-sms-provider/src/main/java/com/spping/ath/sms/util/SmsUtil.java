@@ -36,7 +36,7 @@ public class SmsUtil {
         return sendMsg(mobile,smsCode);
     }
     public static SmsRsp sendMsg(String mobile, String smsCode) {
-        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "LTAI4k9r9k4tYHER", "L9BIuIKEvu1WDAexYIz16UwaVSAJpm");
+        DefaultProfile profile = DefaultProfile.getProfile("cn-hangzhou", "tyyyppp", "L9BIuIKEvu1WDAexYIz16UwaVSAJpm");
         IAcsClient client = new DefaultAcsClient(profile);
         SmsRsp rsp = null;
         CommonRequest request = new CommonRequest();

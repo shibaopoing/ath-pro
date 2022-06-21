@@ -24,7 +24,7 @@
         <maven.compiler.compilerVersion>1.8</maven.compiler.compilerVersion>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-boot.version>2.1.6.RELEASE</spring-boot.version>
-        <mysql.version>8.0.16</mysql.version>
+        <mysql.version>8.0.28</mysql.version>
         <mybatis.version>2.0.1</mybatis.version>
         <eureka-client.version>2.1.0.RELEASE</eureka-client.version>
         <eureka-starter.version>1.4.7.RELEASE</eureka-starter.version>
